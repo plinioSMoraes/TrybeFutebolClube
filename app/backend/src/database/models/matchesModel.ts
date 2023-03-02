@@ -44,7 +44,7 @@ MatchesModel.init({
   tableName: 'matches',
   timestamps: false,
 });
-
+//
 // MatchesModel.belongsTo(TeamsModel, { foreignKey: 'homeTeamId', as: 'id' });
 // MatchesModel.belongsTo(TeamsModel, { foreignKey: 'awayTeamId', as: 'id' });
 
