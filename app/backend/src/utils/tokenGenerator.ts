@@ -5,7 +5,6 @@ import IUser from '../interfaces/IUser';
 const secret: string = process.env.JWT_SECRET || 'jwt_secret';
 
 export async function createTokenJWT(payload: IUser) {
-  console.log(payload);
   const config: SignOptions = {
     expiresIn: '3d',
     algorithm: 'HS256',
