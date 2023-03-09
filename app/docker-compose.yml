@@ -12,7 +12,7 @@ services:
     # Os `healthcheck` devem garantir que a aplicação
     # está operacional, antes de liberar o container
     healthcheck:
-      test: [ "CMD", "lsof", "-t", "-i:3000" ]         
+      test: [ "CMD", "lsof", "-t", "-i:3000" ]
       timeout: 10s
       retries: 5
   backend:
@@ -39,7 +39,7 @@ services:
       - DB_HOST=db
       - DB_PORT=3306
     healthcheck:
-      test: [ "CMD", "lsof", "-t", "-i:3001" ]         
+      test: [ "CMD", "lsof", "-t", "-i:3001" ]
       timeout: 10s
       retries: 5
   db:
@@ -52,7 +52,7 @@ services:
       - MYSQL_ROOT_PASSWORD=123456
     restart: 'always'
     healthcheck:
-      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]         
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
       timeout: 10s
       retries: 5
     cap_add:

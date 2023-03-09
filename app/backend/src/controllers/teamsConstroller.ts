@@ -15,7 +15,7 @@ class TeamsConstroller {
 
     if (!team) {
       return res.status(404)
-        .json({ message: 'Book not found!' });
+        .json({ message: 'team not found!' });
     }
 
     res.status(200).json(team);
