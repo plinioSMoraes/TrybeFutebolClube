@@ -16,6 +16,10 @@ UserModel.init({
     autoIncrement: true,
     allowNull: false,
   },
+  role: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   username: {
     type: DataTypes.STRING,
     allowNull: false,

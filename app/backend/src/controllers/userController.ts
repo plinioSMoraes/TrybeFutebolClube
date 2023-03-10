@@ -14,17 +14,18 @@ class UserController {
     if (!email) return res.status(400).json({ message: 'All fields must be filled' });
     if (!password) return res.status(400).json({ message: 'All fields must be filled' });
     const validation = validations(email, password);
-
     if (!validation) return res.status(401).json({ message: invalidError });
-
     const payloadUser = await this.userService.getUser(email);
-
     if (!payloadUser) return res.status(401).json({ message: invalidError });
-
     const validatePass = compareSync(password, payloadUser.password);
     if (!validatePass) return res.status(401).json({ message: invalidError });
     const token = await createTokenJWT(payloadUser);
     return res.status(200).json({ token });
+  };
+
+  public role = async (req: Request, res: Response) => {
+    const userRole = await this.userService.role(req.params.id);
+    return res.status(200).json({ role: userRole });
   };
 }
 
