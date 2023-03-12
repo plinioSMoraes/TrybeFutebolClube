@@ -6,15 +6,22 @@ class MatchesController {
 
   public getMatches = async (req: Request, res: Response) => {
     const matches = await this.matchesController.getMatches();
-    console.log(req.query.inProgress, typeof req.query.inProgress);
     if (!req.query.inProgress) return res.status(200).json(matches);
-    console.log('passou no teste se existe a query');
     if (req.query.inProgress === 'false') {
-      console.log('entrou no if se query é false');
       return res.status(200).json(matches.filter((match) => match.inProgress === false));
     }
-    console.log('query nao é false, só pode ser true');
     return res.status(200).json(matches.filter((match) => match.inProgress === true));
+  };
+
+  public finnishMatches = async (req: Request, res: Response) => {
+    if (!req.params.id) return res.status(404).json({ message: 'Id not found' });
+    const { id } = req.params;
+    console.log('controller ', id);
+    const updatedMatch = await this.matchesController.finnishMatch(+id);
+    // const match = await this.matchesController.getMatchesById(id);
+    // console.log('match to update ', match);
+    // console.log('updated match', updatedMatch);
+    return res.status(200).json(updatedMatch);
   };
 }
 

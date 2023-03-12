@@ -7,11 +7,16 @@ const Errors = [
 ];
 const secret = process.env.JWT_SECRET || 'jwt_secret';
 
-const tokenVerifier = async (req: Request, res: Response, next: NextFunction) => {
+const tokenVerifier = (req: Request, res: Response, next: NextFunction) => {
   try {
     if (!req.headers.authorization) return res.status(401).json({ message: Errors[0] });
     const verification = verify(req.headers.authorization, secret) as JwtPayload;
-    req.params.id = verification.id;
+    console.log('token verifier ', verification);
+    if (!req.params.id) {
+      req.params.id = verification.id;
+    }
+    console.log(req.params.id);
+    verify(req.headers.authorization, secret) as JwtPayload;
     next();
   } catch (err) {
     return res.status(401).json({ message: Errors[1] });

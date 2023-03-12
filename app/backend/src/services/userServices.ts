@@ -9,7 +9,7 @@ class UserServices {
     this.userModel = UserModel;
   }
 
-  public async role(id: string) {
+  public async role(id: number) {
     const user = await this.userModel.findOne({ raw: true, where: { id } });
     return user?.role;
   }

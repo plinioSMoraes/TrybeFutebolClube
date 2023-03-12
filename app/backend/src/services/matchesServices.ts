@@ -20,6 +20,27 @@ class MatchesServices {
     );
     return matches;
   };
+
+  public getMatchesById = async (id: string) => {
+    const match = await this.matchesModel.findByPk(id);
+    return match;
+  };
+
+  public finnishMatch = async (id: number) => {
+    // const updatedMatch = await this.matchesModel.update(
+    //   { inProgress: false },
+    //   { where: { id } },
+    // );
+    console.log('service ', id);
+    const match = await this.matchesModel.findByPk(id);
+    if (match !== undefined && match?.inProgress !== undefined) {
+      match.inProgress = false;
+    }
+    await match?.save();
+    return match;
+    // console.log(updatedMatch);
+    // return updatedMatch;
+  };
 }
 
 export default MatchesServices;

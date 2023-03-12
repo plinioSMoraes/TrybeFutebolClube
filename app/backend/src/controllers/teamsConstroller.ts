@@ -6,7 +6,7 @@ class TeamsConstroller {
 
   public getAll = async (_req: Request, res: Response) => {
     const teams = await this.teamService.getAll();
-    res.status(200).json(teams);
+    return res.status(200).json(teams);
   };
 
   public getById = async (req: Request, res: Response) => {
@@ -18,7 +18,7 @@ class TeamsConstroller {
         .json({ message: 'team not found!' });
     }
 
-    res.status(200).json(team);
+    return res.status(200).json(team);
   };
 }
 
