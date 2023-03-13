@@ -24,7 +24,6 @@ class UserController {
   };
 
   public role = async (req: Request, res: Response) => {
-    console.log('userRole', req.params.id);
     const userRole = await this.userService.role(+req.params.id);
     return res.status(200).json({ role: userRole });
   };

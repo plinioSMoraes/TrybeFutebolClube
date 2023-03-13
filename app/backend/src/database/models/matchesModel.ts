@@ -5,7 +5,7 @@ import TeamsModel from './teamsModel';
 class MatchesModel extends Model {
   declare id: number;
   declare homeTeamId: number;
-  declare homeTeamsGoals: number;
+  declare homeTeamGoals: number;
   declare awayTeamId: number;
   declare awayTeamGoals: number;
   declare inProgress: boolean;
