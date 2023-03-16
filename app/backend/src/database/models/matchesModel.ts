@@ -9,6 +9,8 @@ class MatchesModel extends Model {
   declare awayTeamId: number;
   declare awayTeamGoals: number;
   declare inProgress: boolean;
+  declare homeTeam: { teamName: string };
+  declare awayTeam: { teamName: string };
 }
 
 MatchesModel.init({

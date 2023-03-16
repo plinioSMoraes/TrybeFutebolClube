@@ -3,6 +3,7 @@ import MatchesModel from '../database/models/matchesModel';
 import TeamsModel from '../database/models/teamsModel';
 import IMatch from '../interfaces/IMatch';
 import INewMatch from '../interfaces/INewMatch';
+// import IMatchModel from '../interfaces/IMatchModel';
 
 class MatchesServices {
   private matchesModel: ModelStatic<MatchesModel>;
@@ -11,7 +12,7 @@ class MatchesServices {
     this.matchesModel = MatchesModel;
   }
 
-  public getMatches = async () => {
+  public getMatches = async (): Promise<MatchesModel[]> => {
     const matches = await this.matchesModel.findAll(
       {
         include: [
