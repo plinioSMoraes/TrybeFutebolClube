@@ -66,5 +66,6 @@ Create Docker Containers
 If everything is right you can run the application 
   - Go to the frontend folder (cd frontend)
   - npm start
+Obs: If it asks permission to start on a different port, just press "Y"
 
 Now you'll be able to play with TFC, have fun :)
