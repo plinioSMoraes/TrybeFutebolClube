@@ -52,14 +52,19 @@ Clone the repo
   - "git@github.com:plinioSMoraes/TrybeFutebolClube.git"
 
 Install NPM packages
+  - Enter the TrybeFutebolClube folder (cd TrybeFutebolClube)
   - npm install
 
+Install Joi
+  - Enter the app folder then enter the backend folder (cd app; cd backend)
+  - npm install joi
+
 Create Docker Containers
-  - cd app
+  - Go back to the app folder (cd ..)
   - npm run compose:up
 
 If everything is right you can run the application 
-  - Go to the frontend folder
+  - Go to the frontend folder (cd frontend)
   - npm start
 
-Now you'll be able to play with TFC
+Now you'll be able to play with TFC, have fun :)
