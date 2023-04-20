@@ -25,10 +25,7 @@
   * [Installation](#installation)
 * [Usage](#usage)
 * [Roadmap](#roadmap)
-* [Contributing](#contributing)
-* [License](#license)
-* [Authors](#authors)
-* [Acknowledgements](#acknowledgements)
+
 
 ## About The Project
 TFC is a fullstack application that has a basic CRUD application built using NodeJS, Express, Sequelize and TypeScript in the backend and React in the frontend, allowing users to check on leaderboard for matches of team and it has some filters allowing the user to be able to check the leaderboard for teams that played on their homes or away. 
