@@ -47,9 +47,9 @@ services:
     container_name: db
     platform: linux/x86_64
     ports:
-      - 3002:3306
+      - 3305:3305
     environment:
-      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_ROOT_PASSWORD=senhaDoDB
     restart: 'always'
     healthcheck:
       test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
