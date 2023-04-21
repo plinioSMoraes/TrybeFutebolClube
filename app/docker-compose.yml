@@ -35,9 +35,9 @@ services:
       # Os dados abaixo se referem ao container `db`
       # Dica: Relembre aqui da comunicação interna entre containers
       - DB_USER=root
-      - DB_PASS=senhaDoDB
-      - DB_HOST=db
-      - DB_PORT=3306
+      - DB_PASS=riUJvHKcirUTXEILu05R
+      - DB_HOST=containers-us-west-154.railway.app
+      - DB_PORT=6384
     healthcheck:
       test: [ "CMD", "lsof", "-t", "-i:3001" ]
       timeout: 10s
